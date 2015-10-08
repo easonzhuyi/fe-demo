@@ -1,0 +1,15 @@
+//icons sprites
+//icons is the folder name
+
+
+$icons:sprite-map("icons/*.png", $spacing:20px, $layout: vertical);
+
+%icons-muti-selectors{
+  background-repeat: no-repeat;
+  background-image: sprite-url($icons);
+}
+
+@mixin icons-rem-sprite($name,$hasLayout:false, $rePostion:(bool:false,x:0,y:0)){
+  @extend %icons-muti-selectors;
+  @include rem-sprite($icons,$name,$hasLayout,$rePostion);
+}

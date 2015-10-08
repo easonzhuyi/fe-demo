@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2015-10-7: Created.
+-->
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+Created by FontForge 20120731 at Wed Oct  7 09:58:03 2015
+ By easonzhuyi
+Created by easonzhuyi with FontForge 2.0 (http://fontforge.sf.net)
+</metadata>
+<defs>
+<font id="icons" horiz-adv-x="512" >
+  <font-face 
+    font-family="icons"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 6 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="-0.0078125 -64.0144 512 448"
+    underline-thickness="25.6"
+    underline-position="-51.2"
+    unicode-range="U+0020-F102"
+  />
+    <missing-glyph />
+    <glyph glyph-name="space" unicode=" " horiz-adv-x="200" 
+ />
+    <glyph glyph-name="uniF100" unicode="&#xf100;" 
+d="M512 144v-16h-64v-160h-160v96h-64v-96h-160v160h-64v16l256 256l96 -96v80h64v-144z" />
+    <glyph glyph-name="uniF102" unicode="&#xf102;" 
+d="M496.128 12.3037l-0.0078125 -0.015625c19.624 -17.6641 21.2803 -46.5117 3.67969 -64.1123c-17.5996 -17.5996 -46.4482 -15.9434 -64.1113 3.68066l-103.145 121.279c-11.2803 12.5361 -16.4639 25.9443 -15.96 36.7764
+c-33.5361 -28.624 -77.04 -45.9199 -124.592 -45.9199c-106.04 0 -192 85.96 -192 192s85.96 192 192 192s192 -85.96 192 -192c0 -47.5439 -17.2959 -91.0479 -45.9199 -124.584c10.832 0.503906 24.2393 -4.68066 36.7754 -15.96zM192 128c70.6963 0 128 57.3037 128 128
+s-57.3037 128 -128 128s-128 -57.3037 -128 -128s57.3115 -128 128 -128z" />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" 
+d="M0 24h512v-88h-512v88zM0 236h512v-88h-512v88zM0 448h512v-88h-512v88z" />
+  </font>
+</defs></svg>

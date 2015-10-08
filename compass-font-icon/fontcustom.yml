@@ -1,0 +1,10 @@
+font_name: icons
+no_hash: true
+input:
+  vectors: icons
+  templates: templates-ruby
+templates: [_fonts.scss, _icons.scss]
+output:
+  fonts: fonts
+  _fonts.scss: scss
+  _icons.scss: scss

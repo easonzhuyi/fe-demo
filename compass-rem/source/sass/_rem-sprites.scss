@@ -1,0 +1,33 @@
+@import "compass/utilities/sprites";
+@import 'rem-calc';
+@import 'mixin';
+
+$ppr: 1!default;
+
+@mixin rem-sprite($sprites, $name, $hasLayout:false, $rePostion:(bool:false, x:0 ,y:0 )) {
+    //background-image: sprite-url($sprites);
+    background-size: rem-calc(strip-units(sprite-width($sprites)/$ppr)) rem-calc(strip-units(sprite-height($sprites)/$ppr));
+    //是否需要矫正背景位置 x,y偏移值
+    @if not map-get($rePostion,bool){
+      @include rem-sprite-pos($sprites, $name);
+    }
+    @else{
+      @include rem-sprite-pos($sprites, $name, map-get($rePostion,x), map-get($rePostion,y));
+
+    }
+    //是否需要宽高
+    @if $hasLayout{
+      @include rem-sprite-size($sprites, $name);
+    }
+}
+
+@mixin rem-sprite-size($sprites, $name) {
+    width: rem-calc(strip-units(image-height(sprite-file($sprites, $name))/$ppr));
+    height: rem-calc(strip-units(image-width(sprite-file($sprites, $name))/$ppr));
+}
+
+//$offset-x的正值向右移，$offset-y的正值向下移
+@mixin rem-sprite-pos($sprites, $name, $offset-x: 0, $offset-y: 0) {
+    background-position: rem-calc(strip-units(nth(sprite-position($sprites, $name), 1)) + $offset-x) rem-calc(strip-units(nth(sprite-position($sprites, $name), 2)) + $offset-y);
+}
+
