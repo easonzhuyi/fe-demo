@@ -1,0 +1,60 @@
+{
+  "checksum": {
+    "previous": "af82ac5f10ff1b556d9748c56add5f5f8ef48b01681bb23fe770240229092bf5",
+    "current": "af82ac5f10ff1b556d9748c56add5f5f8ef48b01681bb23fe770240229092bf5"
+  },
+  "fonts": [
+    "fonts/icons.ttf",
+    "fonts/icons.svg",
+    "fonts/icons.woff",
+    "fonts/icons.eot"
+  ],
+  "glyphs": {
+    "home": {
+      "codepoint": 61696,
+      "source": "icons/home.svg"
+    },
+    "menu": {
+      "codepoint": 61697,
+      "source": "icons/menu.svg"
+    },
+    "search": {
+      "codepoint": 61698,
+      "source": "icons/search.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": "fontcustom.yml",
+    "css_selector": ".icon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "icons",
+    "force": false,
+    "input": {
+      "templates": "templates-ruby",
+      "vectors": "icons"
+    },
+    "no_hash": true,
+    "output": {
+      "_fonts.scss": "scss",
+      "_icons.scss": "scss",
+      "css": "fonts",
+      "fonts": "fonts",
+      "preview": "fonts"
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "templates": [
+      "_fonts.scss",
+      "_icons.scss"
+    ]
+  },
+  "templates": [
+    "scss/_fonts.scss",
+    "scss/_icons.scss"
+  ]
+}
