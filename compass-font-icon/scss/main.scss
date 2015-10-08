@@ -3,8 +3,12 @@
 // @import 'fonts';
 @import 'compass/css3';
 
-@include font-face("zafont", inline-font-files("zafont-400-normal.woff", woff, "zafont-400-normal.ttf", truetype, "zafont-400-normal.svg", svg));
+
+// @include font-face("zafont", inline-font-files("zafont-400-normal.svg", svg));
+
+// @include font-face("zafont", inline-font-files("zafont-400-normal.woff", woff, "zafont-400-normal.ttf", truetype, "zafont-400-normal.svg", svg));
 // support fot ie8-
+@include font-face("zafont", font-files("zafont-400-normal.woff", "zafont-400-normal.ttf", "zafont-400-normal.svg"), "zafont-400-normal.eot");
 // @include font-face("zafont", inline-font-files("zafont-400-normal.woff", woff, "zafont-400-normal.ttf", truetype, "zafont-400-normal.svg", svg),"zafont-400-normal.eot");
 
 .menu {

@@ -39,6 +39,7 @@ var autoprefixer     = require('autoprefixer'),
   // Image plugins
     imagemin = require('gulp-imagemin'),
     svgmin = require('gulp-svgmin'),
+    svgSprite = require("gulp-svg-sprites"),
 
   // General plugins
     rename = require('gulp-rename'),
@@ -61,19 +62,32 @@ function swallowError(error) {
 //------------------------ Font icons
 
 gulp.task('icons', function() {
-  gulp.src([paths.icons + '*.svg'])
+   return gulp.src([paths.icons + '*.svg'])
+    // .pipe(svgSprite(
+    //   {
+    //     mode: 'sprite',
+    //     baseSize: 16,
+    //     preview: false,
+    //     cssFile: false,
+    //     svg:{
+    //       sprite:'zafont-400-normal.svg'
+    //     }
+    //   }
+    // ))
+    // .pipe(gulp.dest(paths.fonts))
     .pipe(svgicons2svgfont({
       fontName   : 'zafont-400-normal',
       normalize  : true,
       fontHeight : 1000,
+      ignoreExt : true,
       log        : function() {} // Silence
     }))
-    .pipe(gulp.dest(paths.fonts))
     .on('glyphs', function(glyphs) {
       gulp.src(paths.templates + '_icons.scss')
         .pipe(template({ glyphs: glyphs }))
         .pipe(gulp.dest(paths.scss));
     })
+    .pipe(gulp.dest(paths.fonts))
     .pipe(svg2ttf())
     .pipe(cloneSink)
     // clone objects streaming through this point
