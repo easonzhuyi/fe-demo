@@ -1,0 +1,79 @@
+@mixin prefix($name, $value){
+  -ms-#{$name}: $value;
+  -o-#{$name}: $value;
+  -moz-#{$name}: $value;
+  -webkit-#{$name}: $value;
+  #{$name}: $value;
+}
+
+@mixin borderRadius($param) {
+  @include prefix("border-radius",$param)
+}
+
+@mixin rotate($degree){
+  @include prefix("transform","rotate:("+$degree+")")
+}
+
+@mixin gra($c1, $c2, $c2Stop, $c3){
+  background: -webkit-gradient(linear, center top, center bottom, from($c1), color-stop($c2Stop, $c2), to($c3));
+  background: -webkit-linear-gradient($c1, $c2 percentage($c2Stop), $c3);
+  background:    -moz-linear-gradient($c1, $c2 percentage($c2Stop), $c3);
+  background:     -ms-linear-gradient($c1, $c2 percentage($c2Stop), $c3);
+  background:      -o-linear-gradient($c1, $c2 percentage($c2Stop), $c3);
+  background-image:   linear-gradient($c1, $c2 percentage($c2Stop), $c3);
+}
+
+@mixin graSimple($begin, $end){
+  background-image: -webkit-gradient(linear, left top, left bottom, from($begin), to($end));
+  background-image: -webkit-linear-gradient(top, $begin, $end);
+  background-image:    -moz-linear-gradient(top, $begin, $end);
+  background-image:     -ms-linear-gradient(top, $begin, $end);
+  background-image:      -o-linear-gradient(top, $begin, $end);
+  background-image:         linear-gradient(top, $begin, $end);
+}
+
+@mixin spritesSize ($param...){
+  $left: 0 !default;
+  $top: 0 !default;
+  $extend: Csprites !default;
+  @if length($param) == 1{
+    $extend: nth($param, 1);
+  }
+  @if length($param) == 2{
+    $left: nth($param, 1);
+    $top:  nth($param, 2);
+  }
+  @if length($param) == 3{
+    $left: nth($param, 1);
+    $top:  nth($param, 2);
+    $extend: nth($param, 3);
+  }
+  @extend %#{$extend};
+
+  $bgpX: $left;
+  $bgpY: $top;
+
+  @if ($left != 0){
+    $bgpX: rem-calc($left);
+  }
+  @if ($top != 0){
+    $bgpY: rem-calc($top)
+  }
+  background-position: $bgpX $bgpY;
+}
+
+@mixin arrRatio($width, $height, $x, $y, $degrees:false){
+  $width2:rem-calc($width);
+  $height2:rem-calc($height);
+  width:$width2;
+  height:$height2;
+  @include spritesSize($x, $y);
+  @if ($degrees){
+    @include rotate($degrees);
+  }
+}
+
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+

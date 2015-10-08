@@ -1,0 +1,58 @@
+//[variable]{{{
+$img: "../images/";
+$imgAbs: "/";
+$version: "";
+
+$mediaArray: "only screen and (max-width: 359px)",
+  "only screen and (min-width: 360px) and (max-width: 479px)",
+  "only screen and (min-width: 480px) and (max-width: 539px)",
+  "only screen and (min-width: 540px) and (max-width: 639px)",
+  "only screen and (min-width: 640px) and (max-width: 719px)",
+  "only screen and (min-width: 720px)";
+
+//$mediaArray: "only screen",
+  //"only screen and (min-width: 361px) and (max-width: 479px)",
+  //"only screen and (min-width: 480px)";
+
+$rem-base:30px;
+
+$ratioFor320: 720/320;
+$ratioFor360: 720/360;
+$ratioFor480: 720/480;
+$ratioFor540: 720/540;
+$ratioFor640: 720/640;
+$ratioFor720: 720/720;
+
+$htmSizeArray: floor($rem-base/$ratioFor320), floor($rem-base/$ratioFor360), floor($rem-base/$ratioFor480), floor($rem-base/$ratioFor540), floor($rem-base/$ratioFor640), floor($rem-base/$ratioFor720);
+
+$mediaDeviceArray: "only screen",
+  "only screen and (-webkit-min-device-pixel-ratio: 2),
+   only screen and (   min--moz-device-pixel-ratio: 2),
+   only screen and (   -o-min-device-pixel-ratio: 2/1),
+   only screen and (        min-device-pixel-ratio: 2),
+   only screen and (             min-resolute: 300dpi),
+   only screen and (             min-resolute: 2dppx )";
+
+$bgSuffix: "", "@2x";
+
+$fontSize: (
+  fz16: rem-calc(16px),
+  fz18: rem-calc(18px),
+  fz20: rem-calc(20px),
+  fz21: rem-calc(21px),
+  fz22: rem-calc(22px),
+  fz24: rem-calc(24px),
+  fz26: rem-calc(26px),
+  fz28: rem-calc(28px),
+  fz30: rem-calc(30px),
+  fz32: rem-calc(32px),
+  fz34: rem-calc(34px),
+  fz42: rem-calc(42px),
+  fz48: rem-calc(48px),
+);
+
+$fontColor:(
+  blue:#0b8bdb,
+  green:#4cb315,
+);
+//[end variable]}}}
